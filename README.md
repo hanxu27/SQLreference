@@ -1,1 +1,33 @@
 # SQLreference
+
+### CREATE TABLE
+#### Data types
+* VARCHAR(30)
+* BLOB 65,535 Characters
+* MEDIUMBLOB
+* LONGBLOB
+* ENUM distinct elements
+* SET distinct elements
+##### Numbers
+* TINYINT -127-127
+* SMALLINT -32768 - 32767
+* MEDIUMINT -8388608 - 8388607
+* INT -2147483648 - 2147483647
+* BIGINT
+* BOOL 0 or 1
+* DECIMAL(6,2) -9999.99 - 9999.99 (sigfigs, decimal places)
+##### DATETIME
+* DATE '1000-01-01' - '9999-12-12'
+* DATETIME
+* TIMESTAMP
+* TIME
+* YEAR
+##### KEYS
+* id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
+* type_id INT UNSIGNED NOT NULL, FOREIGN KEY(type_id) REFERENCES product_type(id)
+##### CONSTRAINTS
+* NOT NULL
+* DEFAULT
+* UNSIGNED (no negatrons)
+* AUTO_INCREMENT (1 column per table)
+* PRIMARY KEY
