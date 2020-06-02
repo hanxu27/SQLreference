@@ -31,3 +31,32 @@
 * UNSIGNED (no negatrons)
 * AUTO_INCREMENT (1 column per table)
 * PRIMARY KEY
+* DEFAULT: sales_tax_rate DECIMAL(5,2) NOT NULL DEFAULT 0
+### ALTER TABLE
+* ALTER TABLE sales_item ADD day_of_week VARCHAR(8);
+* ALTER TABLE sales_item MODIFY day_of_week VARCHAR(9) NOT NULL;
+* ALTER TABLE sales_item DROP COLUMN weekday;
+* RENAME TABLE transaction_type TO transaction;
+* CREATE INDEX transaction_id ON transaction(name, payment_type);
+* TRUNCATE TABLE transaction (delete data)
+* DROP TABLE transaction
+
+### INSERT
+* INSERT INTO product_type (name, id) VALUES ('Casual', NULL)
+* INSERT INTO product_type VALUES ('Business', NULL), ('Casual', NULL), ('Athletic', NULL)
+
+### AND OR NOT
+### SELECT
+* SELECT * FROM sales_item WHERE discount > .15 ORDER BY discount DESC LIMIT 5
+* SELECT CONCAT(first_name, ' ', last_name) AS Name, phone, state FROM customer WHERE state = 'TX'
+* SELECT DISTINCT state FROM customer WHERE state IN ('CA', 'NJ') ORDER BY state
+* SELECT sales_order.id, sales_item.quantity, item.price, (sales_item.quantity * item.price) AS Total FROM sales_order JOIN sales_item sales_item.sales_order_id = sales_order.id JOIN item ON item.id = sales_item.item_id ORDER BY Total DESC
+* SELECT name, supplier, price FROM product LEFT JOIN item ON item.product_id = product_id ORDER BY name
+* SELECT first_name, last_name, street, city, zip, birth_date
+FROM customer
+WHERE MONTH(birth_date) = 12
+UNION
+SELECT first_name, last_name, street, city, zip, birth_date
+FROM sales_person
+WHERE MONTH(birth_date) = 12
+ORDER BY birth_date
