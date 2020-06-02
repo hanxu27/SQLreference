@@ -96,3 +96,4 @@ JOIN sales_person
 ON sales_person.id = sales_order.sales_person_id
 ORDER BY purchase_order_number;
 
+http://www.newthinktank.com/2019/10/sql-tutorial-2019/
